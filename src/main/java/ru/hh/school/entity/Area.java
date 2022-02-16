@@ -1,9 +1,16 @@
 package ru.hh.school.entity;
 
-//TODO: оформите entity
+import javax.persistence.*;
+
+@Entity
+@Table(name="area")
 public class Area {
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "area_id")
   private Integer id;
 
+  @Column(name = "name", length = 100, nullable = false)
   private String name;
 
   public String getName() {
